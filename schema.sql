@@ -15,3 +15,18 @@ CREATE TABLE countries
   id SERIAL PRIMARY KEY,
   title VARCHAR (50) NOT NULL
 );
+
+-- создание таблицы authors (авторы)
+CREATE TABLE authors (
+	id SERIAL PRIMARY KEY,
+	firstname VARCHAR(50) NOT NULL,
+	lastname VARCHAR(50) NOT NULL,
+	birth_date DATE,
+  -- числовой идентификатор, соответствующий стране из таблицы countries
+	country_id INTEGER,
+  -- определение внешнего ключа
+	FOREIGN KEY (country_id) REFERENCES countries (id)
+    -- поведение при удалении и обновлении
+		ON DELETE SET NULL
+		ON UPDATE SET NULL
+);
