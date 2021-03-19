@@ -63,3 +63,21 @@ LIMIT 2;
 SELECT *
 FROM peoples
 LIMIT 2 OFFSET 2;
+
+-- сортировка по дате рождения, более молодые должны выводится первыми
+SELECT *
+FROM peoples
+ORDER BY peoples.birth_date DESC;
+
+-- редактирование данных
+UPDATE peoples
+  set birth_date = '1959-07-12',
+      email = 'richie@sambora.local'
+WHERE
+  peoples.id = 1;
+
+-- удаление данных
+DELETE
+FROM peoples
+WHERE
+  peoples.id = 7;
