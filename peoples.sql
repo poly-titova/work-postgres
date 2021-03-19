@@ -34,3 +34,22 @@ FROM peoples;
 -- вывод всей информации
 SELECT *
 FROM peoples;
+
+-- вывод информациили, если выполняется условие 
+SELECT *
+FROM peoples
+WHERE
+  peoples.id = 2;
+
+-- группирование условий
+SELECT *
+FROM peoples
+WHERE
+  peoples.firstname = 'James' AND
+  peoples.lastname = 'Hetfield';  
+
+-- записи с идентификаторами 2 и 5
+SELECT *
+FROM peoples
+WHERE
+  peoples.id IN (2, 5);
