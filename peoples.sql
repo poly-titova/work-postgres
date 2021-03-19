@@ -26,3 +26,11 @@ INSERT INTO peoples VALUES
 (DEFAULT, 'Jon', 'Bon Jovi', '1962-03-02', 'bon@pisem.local'),
 (DEFAULT, 'Ivan', 'Ivanov', '1994-02-05', 'ivanov@ivan.local'),
 (DEFAULT, 'Ozzy', 'Osbourne', '1948-12-03', 'ozz@fan.local');
+
+-- вывод информации только идентификатора и значения колонки firstname
+SELECT id, firstname
+FROM peoples;
+
+-- вывод всей информации
+SELECT *
+FROM peoples;
