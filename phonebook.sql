@@ -9,3 +9,12 @@
 --            [ ALLOW_CONNECTIONS [=] разр_подключения ]
 --            [ CONNECTION LIMIT [=] предел_подключений ]
 --            [ IS_TEMPLATE [=] это_шаблон ] ]
+
+CREATE DATABASE phonebook
+  WITH
+  OWNER = academy
+  ENCODING = 'UTF8'
+  TEMPLATE = template0;
+  LC_COLLATE = 'C'
+  LC_CTYPE = 'C'
+  CONNECTION LIMIT = -1;
