@@ -53,3 +53,13 @@ SELECT *
 FROM peoples
 WHERE
   peoples.id IN (2, 5);
+
+-- ограничивание выборки
+SELECT *
+FROM peoples
+LIMIT 2;  
+
+-- ограничивание выборки при следующем наборе данных
+SELECT *
+FROM peoples
+LIMIT 2 OFFSET 2;
