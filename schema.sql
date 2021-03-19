@@ -8,3 +8,10 @@ DROP TABLE IF EXISTS genres;
 DROP TABLE IF EXISTS publishers;
 DROP TABLE IF EXISTS authors;
 DROP TABLE IF EXISTS countries;
+
+-- создание таблицы countries (страны)
+CREATE TABLE countries
+(
+  id SERIAL PRIMARY KEY,
+  title VARCHAR (50) NOT NULL
+);
