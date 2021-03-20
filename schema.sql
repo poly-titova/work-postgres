@@ -57,3 +57,20 @@ CREATE TABLE readers
 	lastname VARCHAR(50) NOT NULL,
 	birth_date DATE
 );
+
+-- создание таблицы books (книги)
+CREATE TABLE books
+(
+	id SERIAL PRIMARY KEY,
+	title VARCHAR(100) NOT NULL,
+	release_date DATE NOT NULL,
+	page_count INTEGER NOT NULL DEFAULT 0,
+	author_id INTEGER NOT NULL,
+	country_id INTEGER,
+	FOREIGN KEY (author_id) REFERENCES authors (id)
+		ON DELETE CASCADE
+		ON UPDATE CASCADE,
+	FOREIGN KEY (country_id) REFERENCES countries(id)
+		ON DELETE SET NULL
+		ON UPDATE SET NULL
+);
