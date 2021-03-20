@@ -103,3 +103,17 @@ CREATE TABLE books_publishers
 		ON DELETE CASCADE
 		ON UPDATE CASCADE
 );
+
+-- создание таблицы books_readers (читатели книг)
+CREATE TABLE books_readers
+(
+	book_id INTEGER NOT NULL,
+	reader_id INTEGER NOT NULL,
+	CONSTRAINT books_readers_pk PRIMARY KEY (book_id, reader_id),
+	FOREIGN KEY (book_id) REFERENCES books(id)
+		ON DELETE CASCADE
+		ON UPDATE CASCADE,
+	FOREIGN KEY (reader_id) REFERENCES readers(id)
+		ON DELETE CASCADE
+		ON UPDATE CASCADE
+);
