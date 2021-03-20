@@ -41,3 +41,10 @@ CREATE TABLE publishers
 		ON UPDATE CASCADE
 		ON DELETE SET NULL
 );
+
+-- создание таблицы genres (жанры)
+CREATE TABLE genres
+(
+	id SERIAL PRIMARY KEY,
+	title VARCHAR(30) NOT NULL
+);
