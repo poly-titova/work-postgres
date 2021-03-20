@@ -74,3 +74,18 @@ CREATE TABLE books
 		ON DELETE SET NULL
 		ON UPDATE SET NULL
 );
+
+-- создание таблицы books_genres (жанры книг)
+CREATE TABLE books_genres
+(
+	book_id INTEGER NOT NULL,
+	genre_id INTEGER NOT NULL,
+  -- используем название двух связанных таблиц, чтобы показать связи между таблицами
+	CONSTRAINT books_genres_pk PRIMARY KEY (book_id, genre_id),
+  FOREIGN KEY (book_id) REFERENCES books (id)
+		ON DELETE CASCADE
+		ON UPDATE CASCADE,
+	FOREIGN KEY (genre_id) REFERENCES genres (id)
+		ON DELETE CASCADE
+		ON UPDATE CASCADE
+);
