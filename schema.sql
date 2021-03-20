@@ -48,3 +48,12 @@ CREATE TABLE genres
 	id SERIAL PRIMARY KEY,
 	title VARCHAR(30) NOT NULL
 );
+
+-- создание таблицы readers (читатели)
+CREATE TABLE readers
+(
+	id SERIAL PRIMARY KEY,
+	firstname VARCHAR(50) NOT NULL,
+	lastname VARCHAR(50) NOT NULL,
+	birth_date DATE
+);
