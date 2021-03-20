@@ -30,3 +30,14 @@ CREATE TABLE authors (
 		ON DELETE SET NULL
 		ON UPDATE SET NULL
 );
+
+-- создание таблицы publishers (издатели)
+CREATE TABLE publishers
+(
+	id SERIAL PRIMARY KEY,
+	title VARCHAR(50) NOT NULL,
+	country_id INTEGER,
+	FOREIGN KEY (country_id) REFERENCES countries (id)
+		ON UPDATE CASCADE
+		ON DELETE SET NULL
+);
