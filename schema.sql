@@ -89,3 +89,17 @@ CREATE TABLE books_genres
 		ON DELETE CASCADE
 		ON UPDATE CASCADE
 );
+
+-- создание таблицы books_publishers (книгоиздатели)
+CREATE TABLE books_publishers
+(
+	book_id INTEGER NOT NULL,
+	publisher_id INTEGER NOT NULL,
+	CONSTRAINT book_publishers_pk PRIMARY KEY (book_id, publisher_id),
+	FOREIGN KEY (book_id) REFERENCES books (id)
+		ON DELETE CASCADE
+		ON UPDATE CASCADE,
+	FOREIGN KEY (publisher_id) REFERENCES publishers (id)
+		ON DELETE CASCADE
+		ON UPDATE CASCADE
+);
