@@ -9,3 +9,13 @@ SELECT
 FROM authors
 GROUP BY authors.lastname
 ORDER BY count(authors.lastname) DESC;
+
+-- считаются авторы, которые встречают больше одного раза
+SELECT 
+  authors.lastname,
+  count(authors.lastname)
+FROM authors
+GROUP BY
+	authors.lastname
+HAVING count(authors.lastname) > 1
+ORDER BY count(authors.lastname) DESC
