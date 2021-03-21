@@ -19,3 +19,13 @@ GROUP BY
 	authors.lastname
 HAVING count(authors.lastname) > 1
 ORDER BY count(authors.lastname) DESC
+
+-- всё также, но уже с псевдонимами
+SELECT 
+ authors.lastname AS "authorLastName",
+ count(authors.lastname) AS "count"
+FROM authors
+GROUP BY
+	authors.lastname
+HAVING count(authors.lastname) > 1
+ORDER BY count(authors.lastname) DESC
