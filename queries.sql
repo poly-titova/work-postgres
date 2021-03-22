@@ -29,3 +29,10 @@ GROUP BY
 	authors.lastname
 HAVING count(authors.lastname) > 1
 ORDER BY count(authors.lastname) DESC
+
+-- переводятся имена авторов в хеш-коды
+SELECT
+	concat(authors.firstname, ' ', authors.lastname) AS "Автор",
+	concat(authors.lastname, ' ', left(authors.firstname, 1)) AS "Автор2",
+    md5(authors.lastname) AS "hash"
+FROM authors
