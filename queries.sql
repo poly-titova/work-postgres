@@ -36,3 +36,9 @@ SELECT
 	concat(authors.lastname, ' ', left(authors.firstname, 1)) AS "Автор2",
     md5(authors.lastname) AS "hash"
 FROM authors
+
+-- вместо показа полной даты рождения автора отображается только год
+SELECT
+	concat(authors.firstname, ' ', authors.lastname) AS "Автор",
+	to_char(authors.birth_date, 'YYYY') "Год рождения"
+FROM authors
