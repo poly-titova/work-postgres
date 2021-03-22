@@ -68,3 +68,13 @@ GROUP BY
 	authors.lastname
 ORDER BY
 	COUNT(books.id) DESC;
+
+-- выводятся все книги, даже если есть значение null
+SELECT
+	books.title AS "Название",
+	books.release_date AS "Год выхода",
+	books.page_count AS "Страниц",
+	countries.title AS "Страна"
+FROM books
+LEFT JOIN countries
+	ON books.country_id = countries.id;
