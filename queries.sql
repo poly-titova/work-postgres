@@ -53,3 +53,18 @@ SELECT
 FROM books
 INNER JOIN authors
 	ON books.author_id = authors.id
+
+-- считается сколько книг каждого автора есть в библиотеке
+SELECT
+	authors.firstname AS "Имя",
+	authors.lastname AS "Фамилия",
+	COUNT(books.id) AS "Кол-во книг"
+FROM
+	authors
+	INNER JOIN books
+		ON authors.id = books.author_id
+GROUP BY
+	authors.firstname,
+	authors.lastname
+ORDER BY
+	COUNT(books.id) DESC;
