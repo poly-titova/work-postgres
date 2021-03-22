@@ -42,3 +42,14 @@ SELECT
 	concat(authors.firstname, ' ', authors.lastname) AS "Автор",
 	to_char(authors.birth_date, 'YYYY') "Год рождения"
 FROM authors
+
+-- соберается в единое целое информация о книгах и авторах
+SELECT
+	authors.firstname AS "Имя",
+	authors.lastname AS "Фамилия",
+	books.title AS "Название",
+	books.release_date AS "Год выхода",
+	books.page_count AS "Страниц"
+FROM books
+INNER JOIN authors
+	ON books.author_id = authors.id
