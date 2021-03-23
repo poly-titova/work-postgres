@@ -145,3 +145,17 @@ WHERE authors.country_id IN
     FROM countries
     WHERE title = 'США' OR title = 'Россия'
   )
+
+-- всё так же, но вложенный запрос расположен в промежутке соединения таблиц
+SELECT
+ authors.lastname,
+ authors.firstname,
+ countries.title
+FROM authors
+INNER JOIN 
+(
+	SELECT title, id
+	FROM countries
+	WHERE title = 'США' OR title = 'Россия'
+) countries
+ON authors.country_id = countries.id
