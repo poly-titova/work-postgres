@@ -100,3 +100,17 @@ FROM
 	books
 	FULL JOIN countries 
         ON books.country_id = countries.ID
+
+-- присоединяются сразу несколько таблиц
+SELECT
+	authors.firstname AS "Имя",
+	authors.lastname AS "Фамилия",
+	books.title AS "Название",
+	books.release_date AS "Год выхода",
+	books.page_count AS "Страниц",
+	countries.title AS "Страна"
+FROM books
+INNER JOIN authors
+	ON books.author_id = authors.id
+LEFT JOIN countries
+	ON books.country_id = countries.id;
