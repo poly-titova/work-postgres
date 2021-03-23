@@ -135,3 +135,13 @@ WHERE authors.country_id =
   FROM countries
   WHERE title = 'США'
 )
+
+-- выбираются все авторы, родившихся в США и России
+SELECT *
+FROM authors
+WHERE authors.country_id IN 
+  (
+    SELECT id
+    FROM countries
+    WHERE title = 'США' OR title = 'Россия'
+  )
