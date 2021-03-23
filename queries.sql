@@ -91,3 +91,12 @@ RIGHT JOIN readers
 GROUP BY
 	readers.firstname,
 	readers.lastname;
+
+-- выводится список книг и стран
+SELECT
+	books.title,
+	countries.title 
+FROM
+	books
+	FULL JOIN countries 
+        ON books.country_id = countries.ID
