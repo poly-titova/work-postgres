@@ -114,3 +114,14 @@ INNER JOIN authors
 	ON books.author_id = authors.id
 LEFT JOIN countries
 	ON books.country_id = countries.id;
+
+-- выводятся книги и жанры через запятую
+SELECT
+	books.title AS "Название книги",
+	string_agg(genres.title, ', ') AS "Жанры"
+FROM books_genres
+LEFT JOIN books
+	ON books.id = books_genres.book_id
+LEFT JOIN genres
+	ON genres.id = books_genres.genre_id
+GROUP BY books.title
