@@ -78,3 +78,16 @@ SELECT
 FROM books
 LEFT JOIN countries
 	ON books.country_id = countries.id;
+
+-- считается количество книг, которых каждый читатель прочёл
+SELECT
+	readers.firstname,
+	readers.lastname,
+	count(books_readers.book_id)
+FROM
+	books_readers
+RIGHT JOIN readers
+	ON readers.id = books_readers.reader_id
+GROUP BY
+	readers.firstname,
+	readers.lastname;
