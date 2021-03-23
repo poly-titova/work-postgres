@@ -125,3 +125,13 @@ LEFT JOIN books
 LEFT JOIN genres
 	ON genres.id = books_genres.genre_id
 GROUP BY books.title
+
+-- выбираются все авторы из США
+SELECT *
+FROM authors
+WHERE authors.country_id = 
+(
+  SELECT id
+  FROM countries
+  WHERE title = 'США'
+)
